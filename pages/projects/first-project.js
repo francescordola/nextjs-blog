@@ -2,16 +2,16 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Layout from '../../layout/layout'
 
-const FirstPost = () => {
+const FirstProject = () => {
   return (
     <>
     <Layout>
       <Head>
-        <title>First Post</title>
+        <title>First Project</title>
         <script src="https://connect.facebook.net/en_US/sdk.js" />
       </Head>
 
-      <h1>First Post</h1>
+      <h1>First Project</h1>
       <h2>
         <Link href="/">
           <a>Back to home</a>
@@ -22,4 +22,4 @@ const FirstPost = () => {
   )
 }
 
-export default FirstPost;
+export default FirstProject;
