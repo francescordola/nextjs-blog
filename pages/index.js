@@ -1,36 +1,35 @@
-import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout/layout'
-import utilStyles from '../styles/utils.module.scss'
-import { getSortedPostsData } from '../lib/posts'
-import Link from 'next/link'
-import Date from '../components/date'
+import Head from "next/head";
+import Layout, { siteTitle } from "../components/layout/layout";
+import utilStyles from "../styles/utils.module.scss";
+import { getSortedPostsData } from "../lib/posts";
+import Link from "next/link";
+import Date from "../components/date";
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+  const allPostsData = getSortedPostsData();
   return {
     props: {
-      allPostsData
-    }
-  }
+      allPostsData,
+    },
+  };
 }
 
-export default function Home ({ allPostsData }) {
+export default function Home({ allPostsData }) {
   return (
     <Layout home>
-
       <Head>
-        <title>{'Home'}</title>
+        <title>{"Home"}</title>
       </Head>
 
       <section className={utilStyles.headingMd}>
         <p>[Your Self Introduction]</p>
 
-         <Link href="/posts/first-post">
-              <a>this page!</a>
+        <Link href="/posts/first-post">
+          <a>this page!</a>
         </Link>
 
         <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
+          (This is a sample website - you’ll be building a site like this on{" "}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
       </section>
@@ -45,13 +44,12 @@ export default function Home ({ allPostsData }) {
               </Link>
               <br />
               <small className={utilStyles.lightText}>
-              <Date dateString={date} />
+                <Date dateString={date} />
               </small>
             </li>
           ))}
         </ul>
       </section>
-      
     </Layout>
-  )
+  );
 }
